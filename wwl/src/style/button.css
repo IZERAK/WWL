@@ -1,0 +1,30 @@
+.button {
+  padding: 15px;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  font-family: "AristaPro", sans-serif !important;
+  font-size: 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Анимация */
+}
+.button.main-b {
+  background-color: #ff944d;
+  color: white;
+}
+.button.secondary {
+  border: 2px solid white;
+  color: #ff944d;
+  background: white;
+}
+.button:hover {
+  transform: translateY(-5px); /* Поднимается вверх */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+}
+
+.button:active {
+  transform: scale(0.95); /* Уменьшается при нажатии */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Уменьшаем тень */
+}
+

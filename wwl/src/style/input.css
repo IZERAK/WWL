@@ -1,0 +1,25 @@
+.input {
+  background: none;
+  border: none;
+  border-bottom: 2.5px solid white;
+  outline: none;
+  font-size: 24px;
+  font-family: "AristaPro", sans-serif !important;
+  transition: border-color 0.3s ease;
+}
+.input-container {
+  position: relative;
+}
+.input-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #ffa88a; /* Цвет закрашивания */
+  transition: width 0.3s ease;
+}
+.input-container:hover .input-underline,
+.input-container:focus-within .input-underline {
+  width: 100%; /* Полностью закрашиваем */
+}

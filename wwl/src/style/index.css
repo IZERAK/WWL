@@ -1,4 +1,21 @@
 @import "./fonts.css";
+
+html,
 body {
-  font-family: "AristaPro", sans-serif;
+  font-family: "AristaPro", sans-serif !important;
+  height: 100%;
+  margin: 0;
+  background-color: #ffebd8;
+}
+
+#root {
+  height: 100%;
+  font-family: "AristaPro", sans-serif !important;
+}
+.title-text-form {
+  font-size: 36px;
+  font-weight: 600;
+}
+.title-text-input {
+  font-size: 24px;
 }

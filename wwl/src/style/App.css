@@ -1,0 +1,34 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 100%;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    gap:20px;
+  }
+  
+  .logo {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .name-header {
+    font-size: 48px;
+    font-weight: 600;
+  }
+  
+  .main {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    text-align: center;
+  }
+  
