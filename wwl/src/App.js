@@ -1,7 +1,17 @@
+import AppRouter from "../components/AppRouter";
 import "./App.css";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <div className="header"></div>
+      <div className="main">
+        <AppRouter />
+      </div>
+      <div className="footer"></div>
+      <div></div>
+    </div>
+  );
 }
 
 export default App;
