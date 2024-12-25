@@ -1,4 +1,5 @@
-import AppRouter from "./components/AppRouter.jsx"
+import React from "react";
+import AppRouter from "../src/components/AppRouter";
 import "./style/App.css";
 
 function App() {
@@ -9,7 +10,6 @@ function App() {
         <AppRouter />
       </div>
       <div className="footer"></div>
-      <div></div>
     </div>
   );
 }
