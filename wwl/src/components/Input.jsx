@@ -1,7 +1,7 @@
 import React from "react";
 import "../style/input.css";
 
-const Input = ({ placeholder, value, onChange, style, type = "text",name }) => {
+const Input = ({ placeholder, value, onChange, style, type = "text",name, reqiured=true }) => {
   return (
     <div className="input-container">
       <input
@@ -11,6 +11,7 @@ const Input = ({ placeholder, value, onChange, style, type = "text",name }) => {
         onChange={onChange}
         type={type}
         name={name}
+        required={reqiured}
       />
       <div className="input-underline"></div>
     </div>

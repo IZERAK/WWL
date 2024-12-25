@@ -1,0 +1,72 @@
+.toast {
+    position: fixed;
+    max-width: 300px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.5s ease, right 0.5s ease, top 0.5s ease, bottom 0.5s ease; /* Плавные переходы для всех свойств */
+    z-index: 1000;
+  }
+  
+  .toast.show {
+    opacity: 1;
+  }
+  
+  .toast.success {
+    background-color: #28a745; /* Зеленый для успеха */
+    top: -100px; /* Начальная позиция за пределами экрана */
+    left: 0;
+    right: 0; /* Занимает всю ширину экрана */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    max-width: 100%;
+    justify-content: center;
+    border-radius: 0px;
+
+  }
+  
+  .toast.success.show {
+    top: 0; /* Позиция по умолчанию после появления */
+  }
+  
+  .toast.success.hide {
+    top: -100px; /* Скрытие уведомления */
+    opacity: 0; /* Плавно исчезает */
+  }
+  
+  .toast.error {
+    background-color: #dc3545; /* Красный для ошибок */
+    right: -100px;
+    bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .toast.error.show {
+    opacity: 1;
+    right: 20px;
+  }
+  
+  .toast.error.hide {
+    bottom: -100px; /* Прячем ошибку */
+    opacity: 0; /* Плавно исчезает */
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+  }
+  
+  .close-btn:hover {
+    color: #ffc107; /* Желтый цвет при наведении */
+  }
+  
