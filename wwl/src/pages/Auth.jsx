@@ -11,11 +11,11 @@ const Auth = () => {
         <div className="auth-label-input-group">
           <div className="auth-label-input">
             <div className="title-text-input">Логин:</div>
-            <Input type="email" />
+            <Input type="email" name="login"/>
           </div>
           <div className="auth-label-input">
             <div className="title-text-input">Пароль:</div>
-            <Input type="password" />
+            <Input type="password" name="password" />
           </div>
         </div>
         <div className="button-group">
