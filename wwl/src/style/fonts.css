@@ -1,0 +1,157 @@
+/* AristaPro */
+@font-face {
+    font-family: "AristaPro";
+    src: url("../fonts/AristaPro-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "AristaPro";
+    src: url("../fonts/AristaPro-ExtraLight.ttf") format("truetype");
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "AristaPro";
+    src: url("../fonts/AristaPro-Fat.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "AristaPro";
+    src: url("../fonts/AristaPro-Hairline.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "AristaPro";
+    src: url("../fonts/AristaPro-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "AristaPro";
+    src: url("../fonts/AristaPro-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "AristaPro";
+    src: url("../fonts/AristaPro-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "AristaPro";
+    src: url("../fonts/AristaPro-Thin.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  /* AristaProAlternate */
+  @font-face {
+    font-family: "AristaProAlternate";
+    src: url("../fonts/AristaProAlternate-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "AristaProAlternate";
+    src: url("../fonts/AristaProAlternate-DemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "AristaProAlternate";
+    src: url("../fonts/AristaProAlternate-ExtraLight.ttf") format("truetype");
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "AristaProAlternate";
+    src: url("../fonts/AristaProAlternate-Fat.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "AristaProAlternate";
+    src: url("../fonts/AristaProAlternate-Hairline.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "AristaProAlternate";
+    src: url("../fonts/AristaProAlternate-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "AristaProAlternate";
+    src: url("../fonts/AristaProAlternate-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "AristaProAlternate";
+    src: url("../fonts/AristaProAlternate-Thin.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  /* AristaProIcons */
+  @font-face {
+    font-family: "AristaProIcons";
+    src: url("../fonts/AristaProIcons-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "AristaProIcons";
+    src: url("../fonts/AristaProIcons-Hairline.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "AristaProIcons";
+    src: url("../fonts/AristaProIcons-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "AristaProIcons";
+    src: url("../fonts/AristaProIcons-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "AristaProIcons";
+    src: url("../fonts/AristaProIcons-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "AristaProIcons";
+    src: url("../fonts/AristaProIcons-Thin.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+  }
+  
