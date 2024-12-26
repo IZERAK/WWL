@@ -1,86 +1,81 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Input from "../components/Input";
-import Button from "../components/Button";
-import SuccessToast from "../components/SuccessToast";
-import ErrorToast from "../components/ErrorToast";
-import { postData } from "../reqiest";
+import { ReactComponent as HomeImg } from "../images/home.svg";
+import { ReactComponent as GiftImg } from "../images/gift.svg";
+import { ReactComponent as FriendImg } from "../images/friend.svg";
+import { ReactComponent as GroupImg } from "../images/group.svg";
+import { ReactComponent as EventsImg } from "../images/calendar.svg";
+import Gift from "./Gift";
+import "../style/main.css";
 
-const Auth = () => {
-  const [successVisible, setSuccessVisible] = useState(false);
-  const [errorVisible, setErrorVisible] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
-  const navigate = useNavigate();
+const Main = () => {
+  const [activeMenu, setActiveMenu] = useState("Главная");
 
-  const handleLoginRedirect = () => {
-    navigate("/register");
+  const handleMenuClick = (menuName) => {
+    setActiveMenu(menuName);
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-   
-
-    try {
-      const response = await postData(process.env.REACT_APP_LOGIN, {
-     
-      });
-
-      const { access_token, refresh_token, message } = response;
-      setSuccessMessage(message || "Авторизация прошла успешно!");
-      setSuccessVisible(true);
-
-      localStorage.setItem("access_token", access_token);
-      localStorage.setItem("refresh_token", refresh_token);
-
-      // Редирект через 2 секунды
-      setTimeout(() => {
-        navigate("/home");
-      }, 2000);
-    } catch (err) {
-      const serverErrorMessage = err.response?.data?.error;
-      setErrorMessage(serverErrorMessage || "Не удалось авторизоваться.");
-      setErrorVisible(true);
+  // Функция для рендеринга контента в зависимости от активного пункта меню
+  const renderContent = () => {
+    switch (activeMenu) {
+      case "Главная":
+        return <Gift />;
+      case "Подарки":
+        return <Gift />;
+      case "Друзья":
+        return <Gift />;
+      case "Группы":
+        return <Gift />;
+      case "События":
+        return <Gift />;
+      default:
+        <div></div>;
     }
   };
 
   return (
-    <div className="auth-page">
-      <form className="form" onSubmit={handleSubmit}>
-        <div className="title-text-form">Авторизация</div>
-        <div className="label-input-group">
-          <div className="label-input">
-            <div className="title-text-input">Логин:</div>
-            <Input name="login" />
-          </div>
-          <div className="label-input">
-            <div className="title-text-input">Пароль:</div>
-            <Input type="password" name="password" />
-          </div>
+    <div className="main-page">
+      <div className="menu">
+        <div
+          className={`point-menu ${activeMenu === "Главная" ? "active" : ""}`}
+          onClick={() => handleMenuClick("Главная")}
+        >
+          Главная
+          <HomeImg className="img-point-menu" />
         </div>
-        <div className="button-group">
-          <Button text="Войти" type="submit" style_b="main-b" />
-          <Button
-            text="Регистрация"
-            style_b="secondary"
-            onClick={handleLoginRedirect}
-          />
+        <div
+          className={`point-menu ${activeMenu === "Подарки" ? "active" : ""}`}
+          onClick={() => handleMenuClick("Подарки")}
+        >
+          Подарки
+          <GiftImg className="img-point-menu" />
         </div>
-      </form>
-
-      <SuccessToast
-        message={successMessage}
-        visible={successVisible}
-        onClose={() => setSuccessVisible(false)}
-      />
-      <ErrorToast
-        message={errorMessage}
-        visible={errorVisible}
-        onClose={() => setErrorVisible(false)}
-      />
+        <div
+          className={`point-menu ${activeMenu === "Друзья" ? "active" : ""}`}
+          onClick={() => handleMenuClick("Друзья")}
+        >
+          Друзья
+          <FriendImg className="img-point-menu" />
+        </div>
+        <div
+          className={`point-menu ${activeMenu === "Группы" ? "active" : ""}`}
+          onClick={() => handleMenuClick("Группы")}
+        >
+          Группы
+          <GroupImg className="img-point-menu" />
+        </div>
+        <div
+          className={`point-menu ${activeMenu === "События" ? "active" : ""}`}
+          onClick={() => handleMenuClick("События")}
+        >
+          События
+          <EventsImg className="img-point-menu" />
+        </div>
+      </div>
+      <div className="content">
+        {renderContent()} {/* Условный рендеринг контента */}
+      </div>
     </div>
   );
 };
 
-export default Auth;
+export default Main;

@@ -9,7 +9,7 @@ const AppRouter = () => (
     <Routes>
       <Route path="/" element={<Auth />} />
       <Route path="/register" element={<Reg />} />
-      <Route path="/home" element={<Main />} />
+      <Route path="/main" element={<Main />} />
     </Routes>
   </Router>
 );

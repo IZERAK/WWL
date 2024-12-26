@@ -28,7 +28,7 @@
   .main {
     display: flex;
     flex: 1;
-    align-items: center;
-    text-align: center;
+    height: 100%;
+    width: 100%;
   }
   

@@ -4,6 +4,7 @@ import Input from "../components/Input";
 import Button from "../components/Button";
 import SuccessToast from "../components/SuccessToast";
 import ErrorToast from "../components/ErrorToast";
+import "../style/auth.css"
 import { postData } from "../reqiest";
 
 const Auth = () => {
@@ -32,28 +33,14 @@ const Auth = () => {
       setSuccessMessage(message || "Авторизация прошла успешно!");
       setSuccessVisible(true);
 
-      // Сохраняем уведомление в localStorage
-      localStorage.setItem(
-        "successMessage",
-        message || "Авторизация прошла успешно!"
-      );
-      localStorage.setItem("successVisible", true);
-
       localStorage.setItem("access_token", access_token);
       localStorage.setItem("refresh_token", refresh_token);
 
-      navigate("/home");
+      navigate("/main");
     } catch (err) {
       const serverErrorMessage = err.response?.data?.error;
       setErrorMessage(serverErrorMessage || "Не удалось авторизоваться.");
       setErrorVisible(true);
-
-      // Сохраняем уведомление об ошибке в localStorage
-      localStorage.setItem(
-        "errorMessage",
-        serverErrorMessage || "Не удалось авторизоваться."
-      );
-      localStorage.setItem("errorVisible", true);
     }
   };
 
