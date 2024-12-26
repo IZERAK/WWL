@@ -1,16 +1,30 @@
+.main-page {
+  display: flex;
+  width: 100%;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.content{
+  width: 100%;
+}
+
 .point-menu {
   position: relative;
   display: flex;
   font-size: 24px;
   padding: 20px;
-  gap:40px;
+  gap: 40px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   border: 2px solid #ff944d;
   color: #ff944d;
   justify-content: space-between;
   left: -140px;
-  transition: left 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: left 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out;
 }
 .point-menu:hover {
   left: 0px;
@@ -24,11 +38,10 @@
 }
 .point-menu.active .img-point-menu,
 .point-menu:hover .img-point-menu {
-  fill:white
-
+  fill: white;
 }
-.img-point-menu{
+.img-point-menu {
   width: 24px;
   height: 24px;
-  fill:#ff944d
+  fill: #ff944d;
 }

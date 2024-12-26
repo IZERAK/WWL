@@ -1,0 +1,228 @@
+.gift-page {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.gift-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-height: 80vh;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.gift-list::-webkit-scrollbar {
+  width: 8px; /* Ширина ползунка */
+  background: transparent; /* Убираем фон скроллбара */
+}
+
+.gift-list::-webkit-scrollbar-thumb {
+  background-color: #ffa500; /* Цвет ползунка (оранжевый) */
+  border-radius: 4px; /* Закругленные края */
+}
+
+.gift-list::-webkit-scrollbar-track {
+  background: transparent; /* Убираем трек скроллбара */
+}
+
+.gift-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 200px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.gift-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.gift-title {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.gift-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2a9d8f;
+  margin: 10px 0;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+я .edit-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-button .action-icon {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+
+.edit-button:hover {
+  background-color: #388e3c;
+  transform: scale(1.1);
+}
+
+.delete-button {
+  display: block;
+  width: 100%;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: "AristaPro", sans-serif !important;
+
+  margin-top: 20px;
+}
+
+.delete-button:hover {
+  background-color: #d32f2f;
+  box-shadow: 0 4px 6px rgba(211, 47, 47, 0.4);
+}
+.confirm-buttons {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+
+.confirm-yes-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "AristaPro", sans-serif !important;
+}
+
+.confirm-yes-button:hover {
+  background-color: #388e3c;
+}
+
+.confirm-no-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "AristaPro", sans-serif !important;
+}
+
+.confirm-no-button:hover {
+  background-color: #d32f2f;
+}
+/* Фиксированная кнопка "Добавить подарок" */
+.fixed-add-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color:#28a745;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 23px 25px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+.fixed-add-button:hover {
+  background-color: #218838;
+}
+
+/* Модальное окно */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content.add {
+  background-color: #ffdcc4;
+  padding: 30px;
+  border-radius: 8px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.modal-content button.add-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "AristaPro", sans-serif !important;
+}
+
+.modal-content button.add-button:hover {
+  background-color: #218838;
+}
+
+.add-icon {
+  width: 30px;
+  height: 30px;
+  fill:white
+}

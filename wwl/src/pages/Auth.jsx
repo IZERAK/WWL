@@ -38,7 +38,7 @@ const Auth = () => {
 
       navigate("/main");
     } catch (err) {
-      const serverErrorMessage = err.response?.data?.error;
+      const serverErrorMessage = err.error;
       setErrorMessage(serverErrorMessage || "Не удалось авторизоваться.");
       setErrorVisible(true);
     }

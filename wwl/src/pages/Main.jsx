@@ -5,6 +5,7 @@ import { ReactComponent as FriendImg } from "../images/friend.svg";
 import { ReactComponent as GroupImg } from "../images/group.svg";
 import { ReactComponent as EventsImg } from "../images/calendar.svg";
 import Gift from "./Gift";
+import Home from "./Home";
 import "../style/main.css";
 
 const Main = () => {
@@ -18,7 +19,7 @@ const Main = () => {
   const renderContent = () => {
     switch (activeMenu) {
       case "Главная":
-        return <Gift />;
+        return <Home />;
       case "Подарки":
         return <Gift />;
       case "Друзья":

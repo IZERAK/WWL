@@ -13,7 +13,7 @@ function App() {
       <div className="main">
         <AppRouter />
       </div>
-      <div className="footer">t</div>
+      <div className="footer"></div>
     </div>
   );
 }

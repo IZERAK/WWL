@@ -10,15 +10,21 @@ const api = axios.create({
 
 api.interceptors.request.use(
   (config) => {
+    const refresh_token = localStorage.getItem("refresh_token");
+    if (!refresh_token) {
+      localStorage.clear("access_token");
+      const currentPath = window.location.pathname;
+      if (currentPath !== "/" && currentPath !== "/register") {
+        window.location.href = "/";
+      }
+    }
     const token = localStorage.getItem("access_token");
     if (token) {
       config.headers["Authorization"] = `Bearer ${token}`;
     }
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (error) => Promise.reject(error)
 );
 
 api.interceptors.response.use(
@@ -26,28 +32,41 @@ api.interceptors.response.use(
   async (error) => {
     const originalRequest = error.config;
 
-    if (error.response.status === 401 && !originalRequest._retry) {
+    if (
+      error.response &&
+      error.response.status === 401 &&
+      !originalRequest._retry
+    ) {
       originalRequest._retry = true;
 
-      const refreshToken = localStorage.getItem("refresh_token");
+      const refresh_token = localStorage.getItem("refresh_token");
 
-      if (refreshToken) {
+      if (refresh_token) {
         try {
           const response = await api.post(process.env.REACT_APP_REFRESH, {
-            refreshToken,
+            refresh_token,
           });
-          const { accessToken } = response.data;
-          localStorage.setItem("access_token", accessToken);
 
-          originalRequest.headers["Authorization"] = `Bearer ${accessToken}`;
-          return api(originalRequest);  
+          const { access_token } = response.data;
+
+          localStorage.setItem("access_token", access_token);
+
+          // Обновляем токен в заголовках и повторяем запрос
+          originalRequest.headers["Authorization"] = `Bearer ${access_token}`;
+          return api(originalRequest);
         } catch (refreshError) {
           console.error("Ошибка при обновлении токена:", refreshError);
 
-          window.location.href = "/";  
+          const currentPath = window.location.pathname;
+          if (currentPath !== "/" && currentPath !== "/register") {
+            window.location.href = "/";
+          }
         }
       } else {
-        window.location.href = "/";  
+        const currentPath = window.location.pathname;
+        if (currentPath !== "/" && currentPath !== "/register") {
+          window.location.href = "/";
+        }
       }
     }
 
