@@ -16,44 +16,32 @@ const Auth = () => {
   const handleLoginRedirect = () => {
     navigate("/register");
   };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const login = event.target.login.value;
-    const password = event.target.password.value;
+   
 
     try {
       const response = await postData(process.env.REACT_APP_LOGIN, {
-        login,
-        password,
+     
       });
 
       const { access_token, refresh_token, message } = response;
       setSuccessMessage(message || "Авторизация прошла успешно!");
       setSuccessVisible(true);
 
-      // Сохраняем уведомление в localStorage
-      localStorage.setItem(
-        "successMessage",
-        message || "Авторизация прошла успешно!"
-      );
-      localStorage.setItem("successVisible", true);
-
       localStorage.setItem("access_token", access_token);
       localStorage.setItem("refresh_token", refresh_token);
 
-      navigate("/home");
+      // Редирект через 2 секунды
+      setTimeout(() => {
+        navigate("/home");
+      }, 2000);
     } catch (err) {
       const serverErrorMessage = err.response?.data?.error;
       setErrorMessage(serverErrorMessage || "Не удалось авторизоваться.");
       setErrorVisible(true);
-
-      // Сохраняем уведомление об ошибке в localStorage
-      localStorage.setItem(
-        "errorMessage",
-        serverErrorMessage || "Не удалось авторизоваться."
-      );
-      localStorage.setItem("errorVisible", true);
     }
   };
 

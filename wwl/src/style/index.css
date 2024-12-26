@@ -19,3 +19,29 @@ body {
 .title-text-input {
   font-size: 24px;
 }
+.form{
+  display: flex;
+  flex-direction: column;
+  background-color: #ffdcc4;
+  gap: 20px;
+  padding: 40px;
+  border-radius: 20px;
+}
+.button-group {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+.label-input-group {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  padding: 20px;
+}
+.label-input {
+  display: flex;
+  justify-content: space-between;
+  gap:20px;
+  padding: 10px;
+  align-items: center;
+}

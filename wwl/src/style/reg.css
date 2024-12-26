@@ -1,0 +1,8 @@
+.reg-form{
+    display: flex;
+
+}
+.reg-switch{
+    display: flex;
+    align-items: center;
+}

@@ -42,5 +42,6 @@ export const deleteData = async (url) => {
     console.error('Ошибка DELETE запроса:', error);
     throw error;
   }
+  
 };
     

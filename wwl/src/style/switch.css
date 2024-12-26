@@ -1,0 +1,70 @@
+/* Switch.css */
+
+/* Контейнер для всего компонента */
+.switch-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+  }
+  
+  /* Лейбл для переключателя */
+  .switch-label {
+    position: relative;
+    display: inline-block;
+    width: 50px; /* Ширина */
+    height: 28px; /* Высота */
+  }
+  
+  /* Скрытие стандартного чекбокса */
+  .switch-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* Стили ползунка */
+  .switch-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* Цвет выключенного состояния */
+    transition: 0.4s;
+    border-radius: 28px; /* Округлая форма */
+  }
+  
+  /* Округлая кнопка-ползунок */
+  .switch-slider:before {
+    content: '';
+    position: absolute;
+    height: 20px; /* Размер кнопки */
+    width: 20px;  /* Размер кнопки */
+    border-radius: 50%;
+    left: 4px;  /* Отступ слева */
+    bottom: 4px;  /* Отступ снизу */
+    background-color: white;
+    transition: 0.4s;
+  }
+  
+  /* Состояние включено (розовый цвет) */
+  .switch-input:checked + .switch-slider {
+    background-color: #FF66B2; /* Розовый цвет */
+  }
+  
+  /* Сдвиг ползунка вправо при включении */
+  .switch-input:checked + .switch-slider:before {
+    transform: translateX(22px); /* Сдвиг ползунка */
+  }
+  
+  /* Состояние выключено (синий цвет) */
+  .switch-slider.off {
+    background-color: #3399FF; /* Синий цвет */
+  }
+  
+  .switch-slider.on {
+    background-color: #FF66B2; /* Розовый цвет */
+  }
+  
